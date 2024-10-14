@@ -111,6 +111,10 @@ Apache Tomcat (spécifiquement conçu pour les servlets et JSP )
 
 
 
+## Qu'est ce que c'est JPA ?
+Java Persistence API (JPA) est une spécification qui définit une interface de programmation standard (EntityManager) pour la persistance d'objets Java dans une base de données relationnelle.
+
+
 
 
 
