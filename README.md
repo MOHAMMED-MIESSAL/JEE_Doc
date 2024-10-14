@@ -39,3 +39,66 @@ Les méthodes doGet() et doPost() sont les plus couramment utilisées pour trait
 #### 4) Destruction :
 Lorsque le conteneur décide de détruire la servlet (par exemple, au redémarrage du serveur ou lors d'un arrêt explicite), la méthode destroy() est appelée. C'est l'occasion de libérer les ressources utilisées par la servlet, comme les connexions à la base de données.
 
+
+## Qu'est ce que c'est le mot RequestDispatcher ?
+Le RequestDispatcher est un objet en Java utilisé pour transférer une requête HTTP d'un Servlet à une autre ressource (comme un autre Servlet, une page JSP, ou un fichier statique) sans que le client (le navigateur) n'en soit informé.
+
+#### Il existe deux méthodes principales associées à un RequestDispatcher :
+
+forward() : Redirige la requête vers une autre ressource pour qu'elle prenne en charge l'intégralité de la réponse.  
+
+include() : Inclut le contenu d'une autre ressource dans la réponse actuelle, permettant à la ressource initiale de traiter une partie de la réponse, puis d'inclure le résultat d'une autre ressource.  
+
+
+
+## Qu'est ce que c'est le mot JSP ?
+JSP (JavaServer Pages) est une technologie Java utilisée pour créer des pages web dynamiques.
+
+### Fonctionnement de JSP :
+Lorsque vous créez une page JSP, vous pouvez inclure du code Java directement dans le fichier HTML à l'aide de balises spéciales. 
+Lorsque cette page est appelée par le navigateur, le serveur web (comme Apache Tomcat) transforme la page JSP en un Servlet Java. 
+Ce Servlet est ensuite exécuté, et le résultat est renvoyé sous forme de page HTML au client (le navigateur).
+
+
+### Cycle de vie d'une page JSP :
+#### 1) Traduction : 
+La page JSP est convertie en Servlet Java.  
+#### 2) Compilation :
+Le Servlet est compilé en bytecode (fichier .class).  
+#### 3) Exécution : 
+Le Servlet est exécuté, générant une page HTML en réponse à la requête du client.  
+#### 4) Renvoi de la réponse : 
+Le contenu HTML généré est envoyé au navigateur.  
+
+
+
+## Qu'est ce que c'est le mot JavaBean ?
+Un JavaBean est une classe Java qui suit des conventions spécifiques (constructeur sans argument, méthodes getter et setter, sérialisation)
+et qui est utilisée pour encapsuler des objets, facilitant ainsi la manipulation des données
+
+
+## Différence entre Seveur Web & Serveur d'Application :
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
