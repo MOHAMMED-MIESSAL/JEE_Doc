@@ -106,6 +106,8 @@ Un serveur d'application est un environnement plus complet qui, en plus de servi
 supporte l'exécution de toutes les spécifications Java EE (Jakarta EE). 
 
 
+#### Exemples :  
+Apache Tomcat (spécifiquement conçu pour les servlets et JSP ) 
 
 
 
