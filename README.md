@@ -77,17 +77,33 @@ Un JavaBean est une classe Java qui suit des conventions spécifiques (construct
 et qui est utilisée pour encapsuler des objets, facilitant ainsi la manipulation des données
 
 
-## Différence entre Seveur Web & Serveur d'Application :
+## Différence entre Seveur Web & Serveur d'Application & Conteneur de Servlets  :
+
+### 1. Serveur Web :
+Un serveur web est un logiciel qui gère les requêtes HTTP des clients (généralement des navigateurs) et sert des pages web statiques ou dynamiques. 
+Son rôle principal est de traiter les requêtes liées aux pages web et de les renvoyer au client sous forme de HTML.  
+
+#### Exemples :  
+Apache HTTP Server (ne supporte que les pages statiques)  
+Nginx  
+Apache Tomcat (spécifiquement conçu pour les servlets et JSP ) 
 
 
 
+### 2. Serveur d'Application :
+Un serveur d'application est un environnement plus complet qui, en plus de servir des pages web et des applications basées sur des servlets/JSP,
+supporte l'exécution de toutes les spécifications Java EE (Jakarta EE). 
+
+
+#### Exemples :  
+Wildfly (JBoss)  
+GlassFish
 
 
 
-
-
-
-
+### 3. Conteneur de Servlets :  
+Un serveur d'application est un environnement plus complet qui, en plus de servir des pages web et des applications basées sur des servlets/JSP,
+supporte l'exécution de toutes les spécifications Java EE (Jakarta EE). 
 
 
 
