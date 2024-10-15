@@ -130,15 +130,69 @@ L'idée derrière EJB est de permettre aux développeurs de se concentrer sur la
 ### Types d'EJB 
 
 #### Session Beans :
-Ils exécutent des opérations métier pour le client (comme des calculs, des accès à la base de données, etc.). Ils peuvent être appelés par un client via une interface distante ou locale.
+Les Session Beans en Java EE sont des composants côté serveur qui encapsulent la logique métier d'une application .  
+
+### Stateless Session Bean (Bean sans état) :
+Un Stateless Session Bean ne conserve pas d'état entre les appels du client. Chaque méthode appelée est indépendante, et aucune donnée n'est retenue d'un appel à l'autre.
+
+#### Example :
+````
+import javax.ejb.Stateless;
+
+@Stateless
+public class CalculatorBean {
+    
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+````
+Dans ce cas, chaque fois que la méthode add ou subtract est appelée, le bean traite la demande de manière indépendante, sans stocker d'information entre les appels. Peu importe l'ordre des appels, le bean n'a pas de mémoire de l'état précédent.
 
 
 
+### Stateful Session Bean (Bean avec état) :  
+
+Un Stateful Session Bean conserve l'état de l'interaction entre les appels du client. Il peut stocker des données spécifiques à une session tant que cette session est active. L'état du bean est sauvegardé entre les méthodes appelées par un même client.
 
 
+#### Example :
+````
+import javax.ejb.Stateful;
+import java.util.ArrayList;
+import java.util.List;
+
+@Stateful
+public class ShoppingCartBean {
+    
+    private List<String> items = new ArrayList<>();
+    
+    public void addItem(String item) {
+        items.add(item);
+    }
+
+    public List<String> getItems() {
+        return items;
+    }
+
+    public void clear() {
+        items.clear();
+    }
+}
+
+````
+Dans cet exemple, le Stateful Session Bean ShoppingCartBean garde une trace des articles ajoutés par l'utilisateur dans la liste items. Si le même client appelle plusieurs fois la méthode addItem, les articles seront mémorisés jusqu'à ce que la session se termine ou que la méthode clear soit appelée.
 
 
-
+### Différences entre EJB et les autres JavaBeans :
+#### EJB  :   
+Conçu pour des applications distribuées d’entreprise, avec gestion des transactions, sécurité, et d’autres fonctionnalités avancées.  
+#### JavaBean :   
+Un composant plus simple utilisé principalement pour encapsuler des données et des propriétés, sans les fonctionnalités avancées d’EJB.
 
 
 
