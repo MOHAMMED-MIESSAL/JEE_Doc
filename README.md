@@ -76,6 +76,80 @@ Le contenu HTML généré est envoyé au navigateur.
 Un JavaBean est une classe Java qui suit des conventions spécifiques (constructeur sans argument, méthodes getter et setter, sérialisation)
 et qui est utilisée pour encapsuler des objets, facilitant ainsi la manipulation des données
 
+### Caractéristiques principales d'un JavaBean :
+
+#### 1) Encapsulation des données  : 
+Un bean Java représente souvent un objet métier, avec des propriétés privées accessibles via des méthodes publiques appelées getters et setters.
+
+#### 2) Constructeur sans argument  : 
+Un bean Java doit avoir un constructeur par défaut (sans argument). Cela permet à divers frameworks ou technologies (comme les JSP, les Servlets, ou encore Spring) d'instancier des objets de manière automatique.
+
+#### 3) Sérialisation  : 
+Un bean doit implémenter l'interface Serializable pour permettre la sauvegarde de son état et sa récupération.
+
+#### Example :
+````
+public class Person implements Serializable {
+    private String name;
+    private int age;
+
+    // Constructeur par défaut
+    public Person() {
+    }
+
+    // Getter pour la propriété 'name'
+    public String getName() {
+        return name;
+    }
+
+    // Setter pour la propriété 'name'
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter pour la propriété 'age'
+    public int getAge() {
+        return age;
+    }
+
+    // Setter pour la propriété 'age'
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+````
+
+### Exemple d'utilisation dans une page JSP :
+Supposons que vous avez un Person bean, vous pouvez l'utiliser dans une JSP avec les actions JSP comme suit :
+
+````
+<jsp:useBean id="person" class="com.example.Person" scope="request" />
+<jsp:setProperty name="person" property="name" value="John" />
+<jsp:setProperty name="person" property="age" value="30" />
+
+<p>Nom : <jsp:getProperty name="person" property="name" /></p>
+<p>Âge : <jsp:getProperty name="person" property="age" /></p>
+
+````
+
+Dans cet exemple :  
+
+```` <jsp:useBean> ```` : Crée une instance du bean Person (ou utilise une instance existante) et l'associe à l'identifiant person.  
+```` <jsp:setProperty> ```` : Associe des valeurs aux propriétés name et age du bean person.  
+```` <jsp:getProperty> ```` : Récupère et affiche les valeurs des propriétés name et age.  
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Différence entre Seveur Web & Serveur d'Application & Conteneur de Servlets  :
 
