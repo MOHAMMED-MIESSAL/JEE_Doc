@@ -117,6 +117,37 @@ Java Persistence API (JPA) est une spécification qui définit une interface de 
 
 
 
+## Qu'est ce que c'est EJB ?
+Les Enterprise JavaBeans (EJB) sont des composants logiciels côté serveur qui font partie intégrante de la plateforme Java EE . Son but principal est de simplifier le développement d'applications complexes .  
+
+
+
+### À quoi sert EJB ?
+
+L'idée derrière EJB est de permettre aux développeurs de se concentrer sur la logique métier (les règles spécifiques à l'application, comme les calculs, la validation, etc.), sans se préoccuper des problèmes techniques sous-jacents .  
+
+
+### Types d'EJB 
+
+#### Session Beans :
+Ils exécutent des opérations métier pour le client (comme des calculs, des accès à la base de données, etc.). Ils peuvent être appelés par un client via une interface distante ou locale.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
